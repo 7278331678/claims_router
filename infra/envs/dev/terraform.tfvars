@@ -1,0 +1,5 @@
+aws_region       = "us-east-1"
+project_name     = "router-api"
+environment      = "dev"
+log_level        = "INFO"
+bedrock_model_id = "anthropic.claude-3-sonnet-20240229-v1:0"

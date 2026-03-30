@@ -1,0 +1,170 @@
+{
+  "info": {
+    "_postman_id": "c26d8f4e-bf26-4ba5-92d4-559e567f2faa",
+    "name": "Router API - Claims Use Cases",
+    "description": "Router API based collection using a single endpoint (/router) with 2 GET and 1 POST request for claim workflows.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET Claim Summary (via Router API)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-endpoint-type",
+            "value": "public"
+          }
+        ],
+        "url": {
+          "raw": "{{routerApiBaseUrl}}/router?api_type=claim_summary&pagenumber=1&pagesize=10&claimid=20120674070490199&sourcesystem=GTE&startdate=gte:2102-01-01;lt:2102-01-31&enddate=gte:2012-01-01;lt:2012-12-31&memberid=U0620231301",
+          "host": [
+            "{{routerApiBaseUrl}}"
+          ],
+          "path": [
+            "router"
+          ],
+          "query": [
+            {
+              "key": "api_type",
+              "value": "claim_summary"
+            },
+            {
+              "key": "pagenumber",
+              "value": "1"
+            },
+            {
+              "key": "pagesize",
+              "value": "10"
+            },
+            {
+              "key": "claimid",
+              "value": "20120674070490199"
+            },
+            {
+              "key": "sourcesystem",
+              "value": "GTE"
+            },
+            {
+              "key": "startdate",
+              "value": "gte:2102-01-01;lt:2102-01-31"
+            },
+            {
+              "key": "enddate",
+              "value": "gte:2012-01-01;lt:2012-12-31"
+            },
+            {
+              "key": "memberid",
+              "value": "U0620231301"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET Claim (via Router API)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-endpoint-type",
+            "value": "public"
+          }
+        ],
+        "url": {
+          "raw": "{{routerApiBaseUrl}}/router?api_type=claim&pagenumber=1&pagesize=10&claimid=20213604062199&memberid=U21736801&sourcesystem=GTE&mostrecentindicator=Y&startdate=gte:9999-01-01;lt:9999-12-31&enddate=gte:9999-01-01;lt:9999-12-31",
+          "host": [
+            "{{routerApiBaseUrl}}"
+          ],
+          "path": [
+            "router"
+          ],
+          "query": [
+            {
+              "key": "api_type",
+              "value": "claim"
+            },
+            {
+              "key": "pagenumber",
+              "value": "1"
+            },
+            {
+              "key": "pagesize",
+              "value": "10"
+            },
+            {
+              "key": "claimid",
+              "value": "20213604062199"
+            },
+            {
+              "key": "memberid",
+              "value": "U21736801"
+            },
+            {
+              "key": "sourcesystem",
+              "value": "GTE"
+            },
+            {
+              "key": "mostrecentindicator",
+              "value": "Y"
+            },
+            {
+              "key": "startdate",
+              "value": "gte:9999-01-01;lt:9999-12-31"
+            },
+            {
+              "key": "enddate",
+              "value": "gte:9999-01-01;lt:9999-12-31"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Enhanced Claim Status (via Router API)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-endpoint-type",
+            "value": "public"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"action\": \"update\",\n  \"claimNumber\": \"20220401047540199\",\n  \"traceId\": \"8b5a5c24-f61d-9394-9235-e3a5221e2990\",\n  \"payerId\": \"38334\",\n  \"requestType\": \"VALUE_ADDS_277\"\n}"
+        },
+        "url": {
+          "raw": "{{routerApiBaseUrl}}/router",
+          "host": [
+            "{{routerApiBaseUrl}}"
+          ],
+          "path": [
+            "router"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "routerApiBaseUrl",
+      "value": "https://YOUR_API_ID.execute-api.us-east-1.amazonaws.com"
+    }
+  ]
+}
